@@ -9,3 +9,9 @@
 html, body{
     background-color: antiquewhite;
 }
+
+.main-container{
+    border: 4x solid rgb(134, 170, 152);
+    border-radius: 50px;
+
+}
