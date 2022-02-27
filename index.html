@@ -5,20 +5,78 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Directorio</title>
+
 </head>
 <body>
-    <h1>Programación y Servicios Web</h1>
-    <br>
-    <h2>4IV7 Moreno Nogueron Ximena</h2>
-    <br>
-    <h4>Primera Pagina</h4>
-    <h2><a href="02HTML/index.html">Enlace</a></h2>
-    <br>
-    <h4>Página Loggin</h4>
-    <h2><a href="03Loggin/index.html"><p>Enlace</p></a></h2>
-    <br>
-    <h4>Página Animada</h4>
-    <h2><a href="04CSSAnimada/animada.html"><p>Enlace</p></a></h2>
-    
+
+    <div>
+        <header>
+            <h1>Programación y Servicios Web</h1>
+            <br>
+            <h2>4IV7 Moreno Nogueron Ximena</h2>
+            <br>
+        </header>
+
+        <section>
+            <article>
+                <h3>Páginas hechas en Clase</h3>
+                <br>
+                <h4>Primera Pagina</h4>
+                <h4><a href="02HTML/index.html">Enlace</a></h4>
+                <br>
+                <h4>Página Loggin</h4>
+                <h4><a href="03Loggin/index.html"><p>Enlace</p></a></h4>
+                <br>
+                <h4>Página Animada</h4>
+                <h4><a href="04CSSAnimada/animada.html"><p>Enlace</p></a></h4>
+            </article>
+            <aside>
+                <h3>Tareas</h3>
+                <br>
+                <h4>Curriculum</h4>
+                <h4><a href="Curriculum/Curriculum.html"><p>Enlace</p></a></h4>
+            </aside>
+            <footer>
+                <p></p>
+            </footer>
+        </section>
+    </div>
+    <style>
+        div{
+            color:rgb(0, 0, 0);
+            text-align: center;
+            padding: 5px;
+            background-color: rgb(218, 194, 241);
+            margin:0;
+            border-radius: 50px;
+        }
+
+        section{
+            border: 2px, solid#5873be;
+            margin: 1rem;
+            border-radius: 10px;
+            padding: 1rem;
+        }
+
+        article{
+            float: left;
+            width: 45%;
+            height: 450px;
+            background-color: #e0f0a9;
+            border-radius: 50px;
+        }
+        aside{
+            float: right;
+            width: 45%;
+            height: 450px;
+            background-color: #e0f0a9;
+            display:inline-block;
+            border-radius: 50px;
+        }
+        footer{
+            clear: both;
+        }
+    </style>
+
 </body>
 </html>
