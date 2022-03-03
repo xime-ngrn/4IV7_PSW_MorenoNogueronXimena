@@ -7,12 +7,13 @@ NO tipado
 no existen enteros, ni flotantes, ni cadena,
 por lo que todo es char.
 
-De acuerdo al estandar ES6 se manejan 3 tipos de variables:
+De acuerdo al estandar ES6, se manejan 3 tipos de variables:
 -VAR (variable)
 -LET (variable "protegida" o "protected")
 -CONST (variable constante, nunca cambia su valor)
 
-Diferencia entre metodo y funcion, las funciones retornan valores
+Diferencia entre metodo y funcion, las funciones retornan valores y los
+métodos aveces
 */
 
 function validar(formulario){
