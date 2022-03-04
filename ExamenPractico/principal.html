@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Examen Practico</title>
     <link rel="stylesheet" href="elementos/style.css">
+    <script src="elementos/java.js" ></script>
 </head>
 <body>
     <header>
@@ -22,19 +23,19 @@
             <p>Por favor, introduzca sus datos y complete
                 todos los modulos requeridos.
             </p><br>
-            <p>Valor automovil &nbsp;&nbsp;<input type="number" id="valor" min="100,000.00" max="1,000,000.00"></p>
+            <p>Valor automovil &nbsp;&nbsp;<input type="number" id="valor" min="100,000" max="1,000,000"></p>
             <p>Cuota inicial &nbsp;&nbsp;<input type="number" id="cuota-inicial" min="100,000.00"></p>
-            <p>Periodo &nbsp;&nbsp;<input type="number" id="periodo"></p>
+            <p>Periodo &nbsp;&nbsp;<input type="number" id="periodo" min="3" max="18"></p>
             <br>
-            <button>Generar</button>
+            <button onclick="contenedorTabla">Generar</button>
         </nav>
 
-       <main>
-            <table border="1px" width="750" height="200px" bgcolor="#CEAB93">
+       <div class="contenedorTabla">
+            <table border="1px" width="900" height="200px" bgcolor="#CEAB93" align="center">
                 <tr><td>Valor del automovil</td><td>Cuota inicial</td><td>Periodo</td><td>Interés</td><td>Cuota</td></tr>
-                <tr><td>$</td><td>$</td><td> meses</td><td>Interes</td><td>$    al mes</td></tr> 
+                <tr><td>$</td><td>$</td><td> meses</td><td>-</td><td>$</td></tr>
             </table>
-       <main> 
+       </div> 
    </div> 
 </body>
 </html>
