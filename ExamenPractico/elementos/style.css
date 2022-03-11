@@ -41,4 +41,5 @@ footer{
     height: 150px;
     background-color: rgb(181, 203, 223);
     margin-top: 5px;
+    border-radius: 5px;
 }

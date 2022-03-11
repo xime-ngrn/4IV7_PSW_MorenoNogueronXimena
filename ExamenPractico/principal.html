@@ -23,20 +23,38 @@
             <p>Por favor, introduzca sus datos y complete
                 todos los modulos requeridos.
             </p><br>
-            <p>Valor automovil &nbsp;&nbsp;<input type="number" id="valor" min="100,000" max="1,000,000"></p>
-            <p>Cuota inicial &nbsp;&nbsp;<input type="number" id="cuota-inicial" min="100,000.00"></p>
-            <p>Periodo &nbsp;&nbsp;<input type="number" id="periodo" min="3" max="18"></p>
-            <br>
-            <button onclick="contenedorTabla">Generar</button>
+            <form method="post" name="formulario" 
+            onsubmit="return validar(this)" action="">
+                <br>
+                <label>Valor Automovil: </label>
+                <br>
+                <input type="text" name="valorAuto" id="valorAuto">
+                <br>
+                <label>Cuota inicial: </label>
+                <br>
+                <input type="text" name="cuota" id="cuota">
+                <br>
+                <label>Periodo: </label>
+                <br>
+                <input type="text" name="periodo" id="periodo">
+                <br>
+                <button type="button" onclick="escribir()">Generar</button>
+            </form>
         </nav>
 
        <div class="contenedorTabla">
-            <table border="1px" width="900" height="200px" bgcolor="#CEAB93" align="center">
+           <!--<script>
+               escribir();
+           </script>-->
+           <!-- onsubmit="return escribir(this)" action=""-->
+            <table id="tabla" border="1px" width="900" 
+            height="200px" bgcolor="#CEAB93" align="center">
                 <tr><td>Valor del automovil</td><td>Cuota inicial</td><td>Periodo</td><td>Interés</td><td>Cuota</td></tr>
-                <tr><td>$</td><td>$</td><td> meses</td><td>-</td><td>$</td></tr>
+                <tr><td id="valorTabla">$</td><td id="cuotaInicial">$</td><td id="periodo"> meses</td><td id="interes">-</td><td id="cuotaFinal">$</td></tr>
             </table>
-       </div> 
+       </div>
    </div>
+   <br>
    <footer>
        <h3>4IV7 Moreno Noguerón Ximena</h3>
        <br>
