@@ -30,7 +30,7 @@ function validar(formulario){
     /*transformar las 2 variables a caracteres
     si son correspondientes, que continue, si no, que mande error*/
     var todoValido = true;
-    for(var i=0; i<checkString.length; i++){
+    for(var i=0; i<checkStr.length; i++){
         var ch = checkStr.charAt(i);
         for(var j=0; j<checkOK.length; j++){
             if(ch==checkOK.charAt(j)){

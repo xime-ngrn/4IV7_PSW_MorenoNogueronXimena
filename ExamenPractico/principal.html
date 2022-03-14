@@ -18,41 +18,52 @@
         <br>
         <p>¡Estamos a su disposición!</p>
     </header>
+
    <div class="elementos">
        <nav>
             <p>Por favor, introduzca sus datos y complete
                 todos los modulos requeridos.
             </p><br>
-            <form method="post" name="formulario" 
+            <form name="formulario" method="post"  
             onsubmit="return validar(this)" action="">
                 <br>
                 <label>Valor Automovil: </label>
                 <br>
                 <input type="text" name="valorAuto" id="valorAuto">
                 <br>
+                <br>
                 <label>Cuota inicial: </label>
                 <br>
                 <input type="text" name="cuota" id="cuota">
                 <br>
+                <br>  
                 <label>Periodo: </label>
+                <select name="periodo" id="periodo">
+                    <option value="3">3 meses</option>
+                    <option value="6">6 meses</option>
+                    <option value="9">9 meses</option>
+                    <option value="12">12 meses</option>
+                    <option value="18">18 meses</option>
+                </select>
                 <br>
-                <input type="text" name="periodo" id="periodo">
                 <br>
-                <button type="button" onclick="escribir()">Generar</button>
+                <button type="button" onclick="datos()">Generar</button>
             </form>
         </nav>
 
        <div class="contenedorTabla">
-           <!--<script>
-               escribir();
-           </script>-->
-           <!-- onsubmit="return escribir(this)" action=""-->
-            <table id="tabla" border="1px" width="900" 
-            height="200px" bgcolor="#CEAB93" align="center">
-                <tr><td>Valor del automovil</td><td>Cuota inicial</td><td>Periodo</td><td>Interés</td><td>Cuota</td></tr>
-                <tr><td id="valorTabla">$</td><td id="cuotaInicial">$</td><td id="periodo"> meses</td><td id="interes">-</td><td id="cuotaFinal">$</td></tr>
-            </table>
+            <form name="tabla" method="post" action="">
+                <table name="tablaInicial" id="tablaInicial">
+                    <tr><td>Valor del automovil</td><td>Cuota inicial</td><td>Periodo</td><td>Interés</td><td>Cuota</td></tr>
+                    <tr><td><input type="text" name="valorTabla" onkeypress="" value="$"></td>
+                    <td><input type="text" name="cuotaInicial" onkeypress="" value="$"></td>
+                    <td><input type="text" name="periodoTabla" onkeypress="" value=" meses"></td>
+                    <td><input type="text" name="interes" onkeypress=""></td>
+                    <td><input type="text" name="cuotaFinal" onkeypress="" value="$"></td></tr>
+                </table>
+            </form>
        </div>
+
    </div>
    <br>
    <footer>

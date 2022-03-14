@@ -1,14 +1,33 @@
-/*function obtenerDatos(){
-    var automovil=document.getElementsById("valor").value;
-    var cuotaI=document.getElementsById("cuota-inicial").value;
-    var periodo=document.getElementsById("periodo ").value;
-}*/
 
-let valor_auto;
-let cuotaInicial;
-let validarCuota;
-let periodo;
+function datos(formulario){
+    //var automovil=document.getElementById(valorAuto).value;
+    var automovil=document.formulario.valorAuto.value;
+    var valor=parseInt(automovil);
+    document.tabla.valorTabla.value="$ "+valor;
 
+    var cuotaI=document.formulario.cuota.value;
+    var cuota=parseInt(cuotaI);
+    document.tabla.cuotaInicial.value="$ "+cuota;
+
+    var lista=document.formulario.periodo.selectedIndex;
+    switch(lista){
+        case 0:
+            document.tabla.periodoTabla.value="3 meses";
+            break
+        case 1:
+            document.tabla.periodoTabla.value="6 meses";
+            break;
+        case 2:
+            document.tabla.periodoTabla.value="9 meses";
+            break;
+        case 3:
+            document.tabla.periodoTabla.value="12 meses";
+            break;
+        case 4:
+            document.tabla.periodoTabla.value="18 meses";
+            break;
+    }
+}
 
 function validar(formulario){
     //validar valor del automovil
@@ -29,21 +48,12 @@ function validar(formulario){
     else{
         alert("La cuota no cumple con el valor mínimo")
     }
-
-    //validar periodo
-    if(formulario.periodo.value==3 || formulario.periodo.value==6 || formulario.periodo.value==9 || formulario.periodo.value==12 || formulario.periodo.value==18){
-        periodo=formulario.periodo.value;
-    }
-    else{
-        alert("El periodo no es válido")
-    }
-
-    return valor_auto;
 }
 
-//NO FUNCIONA :)
 function escribir(tabla){
-    alert(valor_auto);
-    tabla.getElementById("valorTabla").innerHTML="$"+valor_auto;
-    tabla.getElementById("cuotaInicial").innerHTML="$"+cuotaInicial;
+    valor=datos(formulario);
+    document.tabla.valorTabla.value="$"+valor;
+    //document.tabla.cuotaInicial.value="$"+cuota;
+    //tabla.getElementById("valorTabla").innerHTML="$"+valor;
+    //tabla.getElementById("cuotaInicial").innerHTML="$"+cuota;
 }
