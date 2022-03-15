@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+    <link rel="stylesheet" href="elementos/style.css">
+    <script src="elementos/ejercicio2.js"></script>
+
+</head>
+<body>
+    <div class="navegador">
+        <nav>
+            <h3><i>4IV7 Moreno Noguerón Ximena</i></h3>
+            <h5>Programación y Servicios Web</h5>
+            <p>Ejercicios en JavaScript</p>
+            <hr width="95%" size="3px" align="center">
+            <ul type="circle">
+                <li><a href="Ejercicio1.html">Ejercicio 1</a></li>
+                <li><a href="Ejercicio2.html">Ejercicio 2</a></li>
+                <li><a href="Ejercicio3.html">Ejercicio 3</a></li>
+                <li><a href="Ejercicio4.html">Ejercicio 4</a></li>
+            </ul>
+        </nav>
+        <main>
+            <form method="post" name="formulario" 
+            onsubmit="return validar(this)" action="">
+               <label>Introduzca su salario: </label> 
+               <input type="text" name="salario" id="salario" >
+               <br>
+               <br>
+               <table name="valoresVentas" id="valoresVentas">
+                   <thead>
+                       <tr>
+                          <td>Numero de Venta</td>
+                          <td>Valor</td> 
+                       </tr>
+                   </thead>
+                   <tr>
+                       <td>1</td>
+                       <td><input type="text" name="venta1" id="venta1" ></td>
+                   </tr>
+                   <tr>
+                        <td>2</td>
+                        <td><input type="text" name="venta2" id="venta2" ></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><input type="text" name="venta3" id="venta3" ></td>
+                    </tr>
+               </table>
+               <input type="submit" name="enviar" value="Generar">
+               <!--<button type="button" onclick="return validar(this)">Generar</button>-->
+            </form>
+            <section name="datos" id="datos">
+                <h3>Aqui debe ir el salario y la comision por venta :)</h3>
+            </section>
+        </main>
+    </div>
+    <br>
+    <br>
+    <footer>
+        <h3>4IV7 Moreno Noguerón Ximena</h3>
+        <br>
+        <a href="../index.html">Directorio</a>
+    </footer>
+</body>
+</html>
