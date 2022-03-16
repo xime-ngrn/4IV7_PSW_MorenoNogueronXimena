@@ -87,5 +87,31 @@ function validar(formulario){
         formulario.venta3.focus();
         return false;
     }
+}
+
+function generar(datosTabla){
+    var salario=parseInt(document.formulario.salario.value);
+    var venta1=parseInt(document.formulario.venta1.value);
+    var venta2=parseInt(document.formulario.venta2.value);
+    var venta3=parseInt(document.formulario.venta3.value);
+    console.log("Salario: "+salario+" Venta1:"+venta1+" Venta2:"+venta2+" Venta3:"+venta3);
+
+    //para escribir en cada <td> el valor dado por el usuario
+    document.getElementById("salarioEscribir").textContent="$"+salario;
+    document.getElementById("valorVenta1").textContent="$"+venta1;
+    document.getElementById("valorVenta2").textContent="$"+venta2;
+    document.getElementById("valorVenta3").textContent="$"+venta3;
+
+    //calcular comisión
+    var comision1=venta1*0.10;
+    document.getElementById("sale1").textContent="$"+comision1;
+    var comision2=venta2*0.10;
+    document.getElementById("sale2").textContent="$"+comision2;
+    var comision3=venta3*0.10;
+    document.getElementById("sale3").textContent="$"+comision3;
+
+    //calcular total
+    var total=salario+comision1+comision2+comision3;
+    document.getElementById("salarioFinal").textContent="$"+total;
 
 }

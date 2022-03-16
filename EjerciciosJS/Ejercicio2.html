@@ -7,7 +7,7 @@
     <title>Ejercicio 2</title>
     <link rel="stylesheet" href="elementos/style.css">
     <script src="elementos/ejercicio2.js"></script>
-
+    
 </head>
 <body>
     <div class="navegador">
@@ -24,38 +24,46 @@
             </ul>
         </nav>
         <main>
-            <form method="post" name="formulario" 
-            onsubmit="return validar(this)" action="">
-               <label>Introduzca su salario: </label> 
-               <input type="text" name="salario" id="salario" >
-               <br>
-               <br>
-               <table name="valoresVentas" id="valoresVentas">
-                   <thead>
-                       <tr>
-                          <td>Numero de Venta</td>
-                          <td>Valor</td> 
-                       </tr>
-                   </thead>
-                   <tr>
-                       <td>1</td>
-                       <td><input type="text" name="venta1" id="venta1" ></td>
-                   </tr>
-                   <tr>
-                        <td>2</td>
-                        <td><input type="text" name="venta2" id="venta2" ></td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td><input type="text" name="venta3" id="venta3" ></td>
-                    </tr>
-               </table>
-               <input type="submit" name="enviar" value="Generar">
-               <!--<button type="button" onclick="return validar(this)">Generar</button>-->
-            </form>
-            <section name="datos" id="datos">
-                <h3>Aqui debe ir el salario y la comision por venta :)</h3>
-            </section>
+            <div name="datos" id="datos">
+                <form method="post" name="formulario" onsubmit="return validar(this)" action="">
+                    <label>Introduzca su salario: </label>
+                    <input type="text" name="salario" id="salario">
+                    <br>
+                    <br>
+                    <table name="valoresVentas" id="valoresVentas">
+                        <thead>
+                            <tr align="center">
+                                <td>Numero de Venta</td>
+                                <td>Valor $</td>
+                            </tr>
+                        </thead>
+                        <tr>
+                            <td align="center">1</td>
+                            <td><input type="text" name="venta1" id="venta1"></td>
+                        </tr>
+                        <tr>
+                            <td align="center">2</td>
+                            <td><input type="text" name="venta2" id="venta2"></td>
+                        </tr>
+                        <tr>
+                            <td align="center">3</td>
+                            <td><input type="text" name="venta3" id="venta3"></td>
+                        </tr>
+                    </table>
+                    <button type="button" onclick="generar()">Generar</button>
+                </form>   
+            </div>
+            
+            <hr width="100%" size="7px" color="#F3E9DD">
+                <table name="datosTabla" id="datosTabla" width="250px" height="200px">
+                    <tr align="center" width="300px"><td></td><td>Valor</td><td>Comisión</td></tr>
+                    <tr align="center" width="300px"><td>Salario</td><td name="salarioEscribir" id="salarioEscribir" value="$"></td><td>-</td></tr>
+                    <tr align="center" width="300px"><td>Venta 1</td><td name="valorVenta1" id="valorVenta1">$</td><td name="sale1" id="sale1"></td></tr>
+                    <tr align="center" width="300px"><td>Venta 2</td><td name="valorVenta2" id="valorVenta2">$</td><td name="sale2" id="sale2"></td></tr>
+                    <tr align="center" width="300px"><td>Venta 3</td><td name="valorVenta3" id="valorVenta3">$</td><td name="sale3" id="sale3"></td></tr>
+                    <tr><td></td><td></td></tr>
+                    <tr><td>Salario Final: </td><td id="salarioFinal"></td></tr>
+                </table>
         </main>
     </div>
     <br>
@@ -66,4 +74,5 @@
         <a href="../index.html">Directorio</a>
     </footer>
 </body>
+
 </html>
