@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Principal</title>
+    <title>Ejercicio 6</title>
     <link rel="stylesheet" href="elementos/style.css">
-
+    
 </head>
 <body>
     <div class="navegador">
@@ -25,7 +25,15 @@
             </ul>
         </nav>
         <main>
-            
+            <h5>Cálculo de la edad de una persona
+            </h5>
+            <br>
+            <form name="formulario" method="post" action="">
+                <label>Introduce tu año de nacimiento: </label>
+                <!-- Considerar años biciestos :( -->
+                <input type="text" name="añoNac" id="añoNac">
+                <button type="button" name="boton" id="boton" onclick="return validar()">Generar</button>
+            </form>
         </main>
     </div>
     <br>

@@ -21,11 +21,17 @@
                 <li><a href="Ejercicio2.html">Ejercicio 2</a></li>
                 <li><a href="Ejercicio3.html">Ejercicio 3</a></li>
                 <li><a href="Ejercicio4.html">Ejercicio 4</a></li>
+                <li><a href="Ejercicio5.html">Ejercicio 5</a></li>
+                <li><a href="Ejercicio6.html">Ejercicio 6</a></li>
             </ul>
         </nav>
         <main>
+            <h5>Cálculo del salario total de un vendedor a partir de su
+                 sueldo inicial y 3 comisiones del 10% por venta.
+            </h5>
+            <br>
             <div name="datos" id="datos">
-                <form method="post" name="formulario" onsubmit="return validar(this)" action="">
+                <form method="post" name="formulario" action="">
                     <label>Introduzca su salario: </label>
                     <input type="text" name="salario" id="salario">
                     <br>
@@ -50,7 +56,10 @@
                             <td><input type="text" name="venta3" id="venta3"></td>
                         </tr>
                     </table>
-                    <button type="button" onclick="generar()">Generar</button>
+                    <br>
+                    <button type="button" onclick="return validar(this)">Generar</button>
+                    <br>
+                    <p id="error"></p>
                 </form>   
             </div>
             

@@ -43,3 +43,10 @@ footer{
     color: black;
     background-color: #DAB88B;
 }
+button{
+    background-color: rgb(3, 117, 117);
+    color: beige;
+    margin: 7px;
+    border-radius: 5px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}

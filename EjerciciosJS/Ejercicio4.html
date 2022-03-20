@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 4</title>
     <link rel="stylesheet" href="elementos/style.css">
+    <script src="elementos/ejercicio4.js"></script>
 
 </head>
 <body>
@@ -20,10 +21,37 @@
                 <li><a href="Ejercicio2.html">Ejercicio 2</a></li>
                 <li><a href="Ejercicio3.html">Ejercicio 3</a></li>
                 <li><a href="Ejercicio4.html">Ejercicio 4</a></li>
+                <li><a href="Ejercicio5.html">Ejercicio 5</a></li>
+                <li><a href="Ejercicio6.html">Ejercicio 6</a></li>
             </ul>
         </nav>
         <main>
-            
+            <h5>Calculo de la calificación final de un alumno.
+            </h5>
+            <br>
+            <form name="formulario" method="post" action="">
+                <label>Introduce tus calificaciones</label>
+                <br>
+                <table name="tablaCalificaciones" id="tablaCalificaciones" width="70%">
+                    <thead align="center"><td></td><td>Puntaje obtenido</td><td>% de la calificación</td></thead>
+                    <tr><td>1er Parcial</td><td align="center"><input type="number" name="calificacion1" id="calificacion1" min="0" max="10"></td><td rowspan="3" align="center">55%</td></tr>
+                    <tr><td>2do Parcial</td><td align="center"><input type="number" name="calificacion2" id="calificacion2" min="0" max="10"></td></tr>
+                    <tr><td>3er Parcial</td><td align="center"><input type="number" name="calificacion3" id="calificacion3" min="0" max="10"></td></tr>
+                    <tr><td>Examen</td><td align="center"><input type="number" name="calificacionExamen" id="calificacionExamen" min="0" max="10"></td><td align="center">30%</td></tr>
+                    <tr><td>Trabajo final</td><td align="center"><input type="number" name="calificacionTF" id="calificacionTF" min="0" max="10"></td><td align="center">15%</td></tr>
+                </table>
+                <br>
+                <button type="button" name="boton" id="boton" onclick="return validar(this)">Generar</button>
+                <p id="error"></p>
+            </form>
+            <br>
+            <br>
+            <div name="resultado">
+                <p id="parciales"></p>
+                <p id="examen"></p>
+                <p id="trabajo"></p>
+                <p id="final"></p>
+            </div>
         </main>
     </div>
     <br>
