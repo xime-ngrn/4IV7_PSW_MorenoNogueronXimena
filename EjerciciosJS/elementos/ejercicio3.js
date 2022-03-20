@@ -4,7 +4,7 @@ function validar(formulario){
     if(valido.test(compraU)){
         descuento();
     }else{
-        document.getElementById("final").innerHTML="El valor de la compra no es válido";
+        document.getElementById("error").innerHTML="El valor de la compra no es válido";
         compra.focus();
     }
 }

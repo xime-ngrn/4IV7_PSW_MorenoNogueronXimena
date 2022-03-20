@@ -34,6 +34,9 @@
                 <label>Introduce la cantidad de dinero que deseas invertir: $</label>
                 <input type="text" name="inversion" id="inversion">
                 <br>
+                <label>Introduce la cantidad de meses que deseas invertir: </label>
+                <input type="number" name="meses" id="meses" min="1" max="48">
+                <br>
                 <button type="button" onclick="return validar(this)">Calcular inversión</button>
                 <br>
                 <p id="error"></p>

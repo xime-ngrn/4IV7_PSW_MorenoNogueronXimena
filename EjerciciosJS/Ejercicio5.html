@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 5</title>
     <link rel="stylesheet" href="elementos/style.css">
+    <script src="elementos/ejercicio5.js"></script>
 </head>
 <body>
     <div class="navegador">
@@ -26,13 +27,22 @@
         <main>
             <h5>Porcentaje de hombres y de mujeres en un grupo de 
                 estudiantes.
-                <!-- Se solicita solo ingresar H o M, 
-                ¿cómo lo calculo? -->
             </h5>
             <br>
             <form name="formulario" method="post" action="">
-
+                <label>Introduce la cantidad de Hombres: </label>
+                <input type="text" name="hombres" id="hombres">
+                <br>
+                <label>Introduce la cantidad de Mujeres: </label>
+                <input type="text" name="mujeres" id="mujeres">
+                <br>
+                <button type="button" onclick="return validar(this)">Calcular porcentaje</button>
+                <br>
+                <p id="error"></p>
             </form>
+            <p id="total"></p>
+            <p id="phombres"></p>
+            <p id="pmujeres"></p>
         </main>
     </div>
     <br>
@@ -42,5 +52,10 @@
         <br>
         <a href="../index.html">Directorio</a>
     </footer>
+    <style>
+        input{
+            width: 70px;
+        }
+    </style>
 </body>
 </html>

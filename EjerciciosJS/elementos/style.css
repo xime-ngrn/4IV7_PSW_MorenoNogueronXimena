@@ -8,7 +8,7 @@ body{
 
 .navegador{
     width: 100%;
-    height: 700px;
+    height: 750px;
     display: flex;
     flex-direction: row;
     border-color: brown;
@@ -24,7 +24,7 @@ nav{
 }
 main{
     width: 70%;
-    height: 100%;
+    height: 98.5%;
     background-color: #B7CADB;
     margin-top: 20px;
     padding: 10px;
@@ -49,4 +49,9 @@ button{
     margin: 7px;
     border-radius: 5px;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#error{
+    border: #3d3e3f 2px solid;
+    color: rgb(218, 63, 63);
 }

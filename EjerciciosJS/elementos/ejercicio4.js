@@ -47,7 +47,6 @@ function evaluar(){
     var parcialesPorcentaje=parciales*55;
     var parcialFinal=parcialesPorcentaje/30;
     parcialFinal=parcialFinal.toFixed(3);
-    //var parcialesFinal=parcialesPorcentaje/30;
     document.getElementById("parciales").innerHTML="El porcentaje de los 3 parciales es de: "+parcialFinal;
     //calificacion del examen
     var examenPorcentaje=examen*30/10;
@@ -58,10 +57,8 @@ function evaluar(){
     trabajoPorcentaje=trabajoPorcentaje.toFixed(3);
     document.getElementById("trabajo").innerHTML="El porcentaje del trabajo final es de: "+trabajoPorcentaje;
 
-    //final
+    //final sale NaN :(
     var calificacion=parcialFinal+examenPorcentaje+trabajoPorcentaje;
     var calificacionFinal=calificacion/10;
-    calificacionFinal=calificacionFinal.toFixed(3);
     document.getElementById("final").innerHTML="Calificación final: "+calificacionFinal;
-
 }
