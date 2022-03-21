@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 6</title>
     <link rel="stylesheet" href="elementos/style.css">
+    <script src="elementos/ejercicio6.js"></script>
     
 </head>
 <body>
@@ -32,7 +33,12 @@
                 <label>Introduce tu año de nacimiento: </label>
                 <!-- Considerar años biciestos :( -->
                 <input type="text" name="añoNac" id="añoNac">
-                <button type="button" name="boton" id="boton" onclick="return validar()">Generar</button>
+                <br>
+                <label>Utiliza el formato XX-XX-XXXX</label>
+                <br>
+                <button type="button" name="boton" id="boton" onclick="return validar(this)">Generar</button>
+                <br>
+                <p id="error"></p>
             </form>
         </main>
     </div>

@@ -77,3 +77,11 @@ td{
     padding-bottom: 1rem;
     border-left: 1px solid #c3c3c3;
 }
+footer{
+    height: 130px;
+    margin-top: 5px;
+    padding: 8px;
+    border-radius: 15px;
+    color: black;
+    background-color: #DAB88B;
+}

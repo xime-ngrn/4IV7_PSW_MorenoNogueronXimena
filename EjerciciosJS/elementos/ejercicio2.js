@@ -36,7 +36,16 @@ function validar(formulario){
         todoValido=false;
     }
 
-    return todoValido;
+    if(!todoValido){
+        document.getElementById("salarioEscribir").textContent="";
+        document.getElementById("valorVenta1").textContent="";
+        document.getElementById("valorVenta2").textContent="";
+        document.getElementById("valorVenta3").textContent="";
+        document.getElementById("sale1").textContent="";
+        document.getElementById("sale2").textContent="";
+        document.getElementById("sale3").textContent="";
+        document.getElementById("salarioFinal").textContent="";
+    }
 }
 
 function generar(){
@@ -54,17 +63,17 @@ function generar(){
 
     //calcular comisión
     var comision1=venta1*0.10;
-    comision1=comision1.toFixed(3);
-    document.getElementById("sale1").textContent="$"+comision1;
+    var comision1Decimal=comision1.toFixed(3);
+    document.getElementById("sale1").textContent="$"+comision1Decimal;
     var comision2=venta2*0.10;
-    comision2=comision2.toFixed(3);
-    document.getElementById("sale2").textContent="$"+comision2;
+    var comision2Decimal=comision2.toFixed(3);
+    document.getElementById("sale2").textContent="$"+comision2Decimal;
     var comision3=venta3*0.10;
-    comision3=comision3.toFixed(3);
-    document.getElementById("sale3").textContent="$"+comision3;
+    var comision3Decimal=comision3.toFixed(3);
+    document.getElementById("sale3").textContent="$"+comision3Decimal;
 
     //calcular total
     var total=salario+comision1+comision2+comision3;
-    total=total.toFixed(4);
-    document.getElementById("salarioFinal").textContent="$"+total;
+    var totalDecimal=total.toFixed(4);
+    document.getElementById("salarioFinal").textContent="$"+totalDecimal;
 }

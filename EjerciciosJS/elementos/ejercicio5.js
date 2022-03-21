@@ -9,10 +9,16 @@ function validar(formulario){
         }else{
             document.getElementById("error").innerHTML="La cantidad de mujeres no es válida";
             mujeres.focus();
+            document.getElementById("total").innerHTML="";
+            document.getElementById("phombres").innerHTML="";
+            document.getElementById("pmujeres").innerHTML="";
         }
     }else{
         document.getElementById("error").innerHTML="La cantidad de hombres no es válida";
         hombres.focus();
+        document.getElementById("total").innerHTML="";
+        document.getElementById("phombres").innerHTML="";
+        document.getElementById("pmujeres").innerHTML="";
     }
 }
 
@@ -24,9 +30,9 @@ function porcentaje(){
 
     //porcentajes
     var porcentajeH=hom*100/total;
-    porcentajeH=porcentajeH.toFixed(3);
-    document.getElementById("phombres").innerHTML="Porcentaje de Hombres: "+porcentajeH+"%";
+    var porcentajeHDecimal=porcentajeH.toFixed(3);
+    document.getElementById("phombres").innerHTML="Porcentaje de Hombres: "+porcentajeHDecimal+"%";
     var porcentajeM=muj*100/total;
-    porcentajeM=porcentajeM.toFixed(3);
-    document.getElementById("pmujeres").innerHTML="Porcentaje de Mujeres: "+porcentajeM+"%";
+    var porcentajeMDecimal=porcentajeM.toFixed(3);
+    document.getElementById("pmujeres").innerHTML="Porcentaje de Mujeres: "+porcentajeMDecimal+"%";
 }
