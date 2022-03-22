@@ -31,10 +31,10 @@
             <br>
             <form name="formulario" method="post" action="">
                 <label>Introduce la cantidad de Hombres: </label>
-                <input type="text" name="hombres" id="hombres">
+                <input type="number" name="hombres" id="hombres" min="0">
                 <br>
                 <label>Introduce la cantidad de Mujeres: </label>
-                <input type="text" name="mujeres" id="mujeres">
+                <input type="number" name="mujeres" id="mujeres" min="0">
                 <br>
                 <button type="button" onclick="return validar(this)">Calcular porcentaje</button>
                 <br>

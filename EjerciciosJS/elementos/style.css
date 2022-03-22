@@ -1,6 +1,6 @@
 *{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 20px;
+    font-size: 25px;
 }
 body{
     background-color: rgb(49, 48, 48);
@@ -54,4 +54,17 @@ button{
 #error{
     border: #3d3e3f 2px solid;
     color: rgb(218, 63, 63);
+}
+a{
+    font-size: 23px;
+    color: rgb(28, 66, 68);
+}
+a:hover{
+    color: #B7CADB;
+    -webkit-text-stroke: 1px black;
+}
+input{
+    border-color: #3d3e3f;
+    background-color: #dadfe4;
+    border-radius: 10px;
 }
