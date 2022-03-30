@@ -17,5 +17,45 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
             <!-- Como no hay un formulario, la ruta que va a 
             tomar será GET -->
         </div>
+        <div class="registro">
+            <br>
+            <h1>Registrar nuevo alumno de Bátiz</h1>
+            <br>
+            <form method="post" action="RegistrarALumno" name="registro">
+                <label>Nombre del alumno</label>
+                <br>
+                <input type="text" name="nombre" id="nombre">
+                <br>
+                <label>Apellido Paterno</label>
+                <br>
+                <input type="text" name="appat">
+                <br>
+                <label>Apellido Materno</label>
+                <br>
+                <input type="text" name="apmat">
+                <br>
+                <label>Boleta</label>
+                <br>
+                <input type="text" name="boleta">
+                <br>
+                <label>Telefono</label>
+                <br>
+                <input type="text" name="tel">
+                <br>
+                <input type="submit" value="Registrar Nuevo Alumno" name="enviar">
+                <br>
+                <input type="reset" value="Borrar Datos">
+            </form>
+        </div>
+        <div class="eliminar">
+            <form method="get" name="eliminar" action="EliminarAlumno">
+                <br>
+                <label>Ingrese la boleta del alumno que desea dar de baja</label>
+                <br>
+                <input type="text" name="eliminarBoleta">
+                <br>
+                <input type="submit" value="Alumno Eliminado">
+            </form>
+        </div>
     </body>
 </html>

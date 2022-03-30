@@ -1,0 +1,56 @@
+*{
+    font-family:Arial, Helvetica, sans-serif;
+    padding: 7px;
+    font-size: 20px;
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    height: 450px;
+    width: 100%;
+}
+.modificacion{
+    padding-left: 25px;
+    width:35%;
+    height: 100%;
+    background-color: darkslategray;
+}
+.pedirDatos{
+    padding-top: 15px;
+    width: 60%;
+    height: 100%;
+    background-color: #DFDFDE;
+}
+
+#error{
+    color:rgb(185, 24, 24);
+    border-color: black;
+    border: 2px;
+}
+a{
+    color: whitesmoke;
+}
+a:visited{
+    color:darkgray;
+}
+a:hover{
+    -webkit-text-stroke: 0.4px #5584AC;
+}
+input{
+    border-radius: 6px;
+    background-color: rgb(235, 224, 211);
+}
+.enviar{
+    border-radius: 5px;
+    border-color: white;
+    background-color: #8D8DAA;
+}
+footer{
+    align-content: center;
+    background-color: cadetblue;
+    border-radius: 5px;
+}
