@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingresar Alumno</title>
+    <script src="elementos/validaciones.js"></script>
+    <link rel="stylesheet" href="elementos/style.css">
+</head>
+<body>
+    <br>
+    <center>
+        <h2>Ingresar Alumno</h2>
+    </center>
+    <br>
+    <pre>Completa el formulario cumpliendo con todos los requisitos, al finalizar presiona el botón de Enviar</pre>
+    <pre>Los nombres y apellidos deben empezar por mayúsculas</pre>
+    <br>
+    <a href="ConsultarAlumnos">Consulta aquí a los Alumnos</a>
+    <br>
+    <a href="index.html">Modificar los datos de un Alumno</a>
+    <br>
+    <br>
+    <form method="post" name="formulario" action="IngresarAlumno">
+        <label>Introduce tu número de Boleta: </label>
+        <input type="number" name="boletaN" id="boletaN" min="0">
+        <br>
+        <label>Introduce tu Nombre: </label>
+        <input type="text" name="nombreN" id="nombreN">
+        <br>
+        <label>Introduce tu Apellido Paterno: </label>
+        <input type="text" name="appatN" id="appatN">
+        <br>
+        <label>Introduce tu Apellido Materno: </label>
+        <input type="text" name="apmatN" id="apmatN">
+        <br>
+        <label>Introduce tu número de Teléfono: </label>
+        <input type="text" name="telefonoN" id="telefonoN">
+        <br>
+        <p id="errorN"></p>
+        <br>
+        <input type="submit" class="enviar" value="Enviar" 
+        onclick="return nuevoAlumno(this)">
+    </form>
+    <br>
+    <br>
+    <style>
+       form{
+            width: 50%;
+            margin-top: 5px;
+            padding: 15px;
+            border-radius: 10px;
+            border: solid;
+            border-color: rgb(215, 206, 223);
+       }
+   </style> 
+</body>
+
+</html>

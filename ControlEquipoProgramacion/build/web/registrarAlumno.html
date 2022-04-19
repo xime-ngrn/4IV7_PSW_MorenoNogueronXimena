@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Alumno</title>
+    <link rel="stylesheet" href="elementos/style.css">
+    <script src="elementos/validacion.js"></script>
+</head>
+<body>
+    <div name="encabezado" id="encabezado">
+        <div id="bienvenida"><i>
+                <h1>Bienvenido</h1>
+            </i></div>
+        <div id="paginas"><h5>Registrar Alumno</h5></div>
+    </div>
+    <nav>
+        <div id="ipn">
+            <img src="elementos/logoIPN.png" width="240" height="320">
+        </div>
+        <div id="form">
+            <p></p>
+            <br>
+            <br>
+            <br>
+            <form name="formulario" method="post" action="ingresarDatos.jsp">
+                <label>Turno: </label>
+                <select name="horario" id="horario">
+                    <option>IM</option>
+                    <option>IV</option>
+                </select>
+                <br><br>
+                <label>Semestre: </label>
+                <select name="semestre" id="semestre">
+                    <option disabled>3</option>
+                    <option>4</option>
+                    <option disabled>5</option>
+                    <option>6</option>
+                </select>
+                <br><br>
+                <label>Grupo: </label>
+                <select name="grupo" id="grupo">
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                </select>
+                <br><br>
+                <button type="submit" class="subirDatos" id="datosRegistro" 
+                onclick="obtenerRegistro()">Registrar Alumno</button>
+            </form>
+        </div>
+    </nav>
+</body>
+</html>

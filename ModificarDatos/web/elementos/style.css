@@ -1,0 +1,72 @@
+*{
+    background-color: rgb(118, 194, 197);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 22px;
+    align-items: center;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+}
+.dato{
+    margin-top: 5px;
+    padding-left: 10px;
+    padding-right: 2px;
+    width: 30%;
+    height: 400px;
+    border-radius: 10px;
+    border: solid;
+    border-color: rgb(215, 206, 223);
+}
+section{
+    display: flex;
+    justify-content: space-around;
+}
+.datoTel{
+    margin-top: 5px;
+    padding-left: 10px;
+    padding-right: 2px;
+    width: 30%;
+    height: 400px;
+    border-radius: 10px;
+    border: solid;
+    border-color: rgb(215, 206, 223);
+}
+.datoT{
+    width: 45%;
+    margin-top: 5px;
+    padding-left: 10px;
+    padding-right: 2px;
+    border-radius: 10px;
+    border: solid;
+    border-color: rgb(215, 206, 223);
+}
+h2{
+    font-size: 50px;
+    color: #8D8DAA;
+    -webkit-text-stroke: 1.5px rgb(109, 108, 112);
+}
+input{
+    border-radius: 10px;
+    background-color: rgb(208, 191, 241);
+}
+.enviar{
+    border-radius: 5px;
+    border-color: white;
+    background-color: #8D8DAA;
+}
+a{
+    color: rgb(115, 83, 139);
+    font-size: 25px;
+}
+a:visited{
+    color:rgb(156, 152, 152);
+}
+a:hover{
+    -webkit-text-stroke: 0.3px #8D8DAA;
+}
+p{
+    color:rgb(185, 24, 24);
+    border-color: black;
+    border: 2px;
+}

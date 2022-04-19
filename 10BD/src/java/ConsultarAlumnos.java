@@ -35,10 +35,12 @@ public class ConsultarAlumnos extends HttpServlet {
     public void init(ServletConfig cfg) throws ServletException{
         //aqui se define cómo se conecta a la BD
         
-        //tipo de conector jdbc(tipo de conector, este es lenguaje Java):manejador de BD:Puerto//IP/nombre BD
-        String URL="jdbc:mysql:3306//localhost/alumnos";
-        //Puede generarse un error si "no es soportable", el error puede ser por la url, 
-        //por lo que se le puede quitar el puerto, porque el manejador trae por defecto el puerto
+        /*La URL está compuesta por: tipo de conector 
+        (jdbc es lenguaje Java):manejador de BD:Puerto//IP/nombre BD */
+        String URL="jdbc:mysql://localhost/alumnos";
+        /*Puede generarse un error si "no es soportable", el error puede ser 
+        por la url, por lo que se le puede quitar el puerto, porque el manejador 
+        trae por defecto el puerto*/
        
         String userName="root";
         String password="n0m3l0";
@@ -83,9 +85,9 @@ public class ConsultarAlumnos extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        //aqui se pega lo que estaba en la línea 72 (la respuesta del servidor)
         response.setContentType("text/html;charset=UTF-8");
         try ( PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
@@ -105,7 +107,8 @@ public class ConsultarAlumnos extends HttpServlet {
                 String nombre, apellidoP, apellidoM,tel;
                 //establecer la querry
                 String q="select * from alumnobatiz";
-                //set establece la sentencia de conexión, la query pide los valores de la tabla
+                /*set establece la sentencia de conexión, la query pide los 
+                valores de la tabla*/
                 set=con.createStatement();
                 rs=set.executeQuery(q);
                 
@@ -155,11 +158,8 @@ public class ConsultarAlumnos extends HttpServlet {
         //no tendrá nada programado
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
+    /*Returns a short description of the servlet.
+     @return a String containing servlet description */
     @Override
     public String getServletInfo() {
         return "Short description";

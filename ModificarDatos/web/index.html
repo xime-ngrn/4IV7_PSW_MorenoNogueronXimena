@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modificar Datos</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="elementos/validaciones.js"></script>
+    <link rel="stylesheet" href="elementos/style.css">
+</head>
+<body>
+    <br>
+    <center>
+        <h2>Modificar Datos del Alumno</h2>
+    </center>
+    <br>
+    <pre>Elige los datos que quieras modificar y presiona el botón de Modificar Datos</pre>
+    <pre>Los nombres y apellidos deben empezar por mayúsculas</pre>
+    <br>
+    <a href="ConsultarAlumnos">Consulta aquí a los Alumnos</a>
+    <br>
+    <a href="ingresarAlumno.html">Ingresar un Alumno</a>
+    <br>
+    <br>
+    <nav>
+        <div class="dato" name="boleta">
+            <h4>Cambiar Boleta
+                <h4 />
+                <form method="post" name="formulario" action="ModificarBoleta">
+                    <label>Introduce tu número de Boleta actual: </label>
+                    <input type="number" name="boletaact1" id="boletaact1" min="0">
+                    <br>
+                    <hr>
+                    <label>Introduce tu nuevo número de Boleta: </label>
+                    <input type="number" name="boleta" id="boleta" min="0">
+                    <br>
+                    <p id="errorBoletas"></p>
+                    <br>
+                    <input type="submit" class="enviar" value="Modificar Datos" onclick="return validarBoleta(this)">
+                </form>
+        </div>
+        <div class="dato" name="nombre">
+            <h4>Cambiar Nombre
+                <h4 />
+                <form method="post" name="formulario" action="ModificarNombre">
+                    <label>Introduce tu número de Boleta actual: </label>
+                    <input type="number" name="boletaact2" id="boletaact2" min="0">
+                    <br>
+                    <hr>
+                    <label>Introduce tu Nombre: </label>
+                    <input type="text" name="nombre" id="nombre">
+                    <br>
+                    <p id="errorNombre"></p>
+                    <br>
+                    <input type="submit" class="enviar" value="Modificar Datos" onclick="return validarNombre(this)">
+                </form>
+        </div>
+        <div class="dato" name="apellidos">
+            <h4>Cambiar Apellidos
+                <h4 />
+                <form method="post" name="formulario" action="ModificarApellidos">
+                    <label>Introduce tu número de Boleta actual: </label>
+                    <input type="number" name="boletaact3" id="boletaact3" min="0">
+                    <br>
+                    <hr>
+                    <label>Introduce tu Apellido Paterno: </label>
+                    <input type="text" name="appat" id="appat">
+                    <br>
+                    <label>Introduce tu Apellido Materno: </label>
+                    <input type="text" name="apmat" id="apmat">
+                    <br>
+                    <p id="errorApellidos"></p>
+                    <br>
+                    <input type="submit" class="enviar" value="Modificar Datos" onclick="return validarApellidos(this)">
+                </form>
+        </div>
+    </nav>
+    <section>
+        <div class="datoTel" name="tel">
+            <h4>Cambiar Teléfono
+                <h4 />
+                <form method="post" name="formulario" action="ModificarTelefono">
+                    <label>Introduce tu número de Boleta actual: </label>
+                    <input type="number" name="boletaact4" id="boletaact4" min="0">
+                    <br>
+                    <hr>
+                    <label>Introduce tu número de Teléfono: </label>
+                    <input type="text" name="telefono" id="telefono">
+                    <br>
+                    <p id="errorTelefono"></p>
+                    <br>
+                    <input type="submit" class="enviar" value="Modificar Datos" onclick="return validarTelefono(this)">
+                </form>
+        </div>
+
+        <div class="datoT" name="todos">
+            <h4>Cambiar Todos los Datos
+                <h4 />
+                <form method="post" name="formulario" action="Modificar">
+                    <label>Introduce tu número de Boleta actual: </label>
+                    <input type="number" name="boletaact5" id="boletaact5" min="0">
+                    <br>
+                    <hr>
+                    <label>Nuevo número de Boleta: </label>
+                    <input type="number" name="boletaT" id="boletaT" min="0">
+                    <br>
+                    <label>Introduce tu Nombre: </label>
+                    <input type="text" name="nombreT" id="nombreT">
+                    <br>
+                    <label>Introduce tu Apellido Paterno: </label>
+                    <input type="text" name="appatT" id="appatT">
+                    <br>
+                    <label>Introduce tu Apellido Materno: </label>
+                    <input type="text" name="apmatT" id="apmatT">
+                    <br>
+                    <label>Introduce tu número de Teléfono: </label>
+                    <input type="text" name="telefonoT" id="telefonoT">
+                    <br>
+                    <p id="errorTodos"></p>
+                    <br>
+                    <input type="submit" class="enviar" value="Modificar Datos" onclick="return validarTodo(this)">
+                </form>
+                <br>
+                <br>
+        </div>
+    </section>
+</body>
+
+</html>

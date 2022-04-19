@@ -1,4 +1,3 @@
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -15,37 +14,27 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author ximem
  */
-public class EliminarAlumno extends HttpServlet {
+public class IngresarAlumno extends HttpServlet {
 
     private Connection con;
     private Statement set;
     private ResultSet rs;
     
+    //Constructor de la clase
     public void init(ServletConfig cfg) throws ServletException{
-        //aqui se define cómo se conecta a la BD
-        
-        //tipo de conector jdbc(tipo de conector, este es lenguaje Java):manejador de BD:Puerto//IP/nombre BD
         String URL="jdbc:mysql://localhost/alumnos";
-        //Puede generarse un error si "no es soportable", el error puede ser por la url, 
-        //por lo que se le puede quitar el puerto, porque el manejador trae por defecto el puerto
-       
+        
         String userName="root";
         String password="n0m3l0";
         
         try{
-            //excepción para cuando se intenta concectar a la BD
-            
-            //Se especifica el driver "puerto.manejadorBD.tipoControlador.Driver"
             Class.forName("com.mysql.jdbc.Driver");
-            //se establece la conexión
             con=DriverManager.getConnection(URL,userName,password);
-            //se crea la sentencia
             set=con.createStatement();
             System.out.println("Se conectó a la BD");
             
         }catch(Exception e){
-            //cuando no se conecta a la BD
-            System.out.println("No se conectó con la BD :(");
+            System.out.println("No se conectó con la BD");
             System.out.println(e.getMessage());
             System.out.println(e.getStackTrace());
             
@@ -70,33 +59,7 @@ public class EliminarAlumno extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try ( PrintWriter out = response.getWriter()) {
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Eliminar un Alumno</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            
-            try{
-                //eliminar un alumno por su n° de boleta
-                int bol=Integer.parseInt(request.getParameter("eliminarBoleta"));
-                String q="delete from alumnobatiz where boleta="+bol;
-                
-                set.executeUpdate(q);
-                out.println("<h1>Alumno eliminado</h1>");
-            }catch(Exception e){
-                System.out.println("No se pudo eliminar el registro");
-                System.out.println(e.getMessage());
-                System.out.println(e.getStackTrace());
-                
-                out.println("<h1>No se pudo eliminar el Alumno</h1>");
-            }
-            out.println("<a href='ConsultarAlumnos'>Consultar Alumnos</a>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+        processRequest(request, response);
     }
 
     /**
@@ -110,7 +73,64 @@ public class EliminarAlumno extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        response.setContentType("text/html;charset=UTF-8");
+        try ( PrintWriter out = response.getWriter()) {
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Registro nuevo Alumno</title>");
+            out.println("<style>"
+                    +"body{"
+                    + "background-color:#8D8DAA;\n" +
+                      "text-align: center;}"
+                    + "#servlet{"
+                    + "border-style: solid;\n" +
+                      "border-color: white;\n" +
+                      "border-radius: 5px;"
+                    + "}"+
+                    "#servletErr{"
+                    + "border-style: solid;\n" +
+                      "border-color: red;\n" +
+                      "border-radius: 5px;"
+                    + "}"
+                    + "</style>");
+            out.println("</head>");
+            out.println("<body>");
+            
+            try{
+                int bol;
+                String nom, appat, apmat, tel;
+                
+                bol=Integer.parseInt(request.getParameter("boletaN"));
+                nom=request.getParameter("nombreN");
+                appat=request.getParameter("appatN");
+                apmat=request.getParameter("apmatN");
+                tel=request.getParameter("telefonoN");
+                
+                String q="insert into alumnobatiz values("
+                        +bol+",'"+nom+"','"+appat+"','"+apmat+"','"+tel+"');";
+                
+                set.executeUpdate(q);
+                out.println("<div id='servlet'><h1>Se ha registrado al alumno</h1>"
+                    + "<img src='elemenServlet/gatoFeliz.gif'><br><br>" 
+                    +"<a href='ConsultarAlumnos'>Consultar Alumnos</a><br>"
+                    + "<a href=index.html>Regresar a Modificar Datos</a><br><br></div>");
+                System.out.println("Se registró un nuevo alumno");
+                
+            }catch(Exception e){
+                out.println("<div id='servletErr'><h1>No se ha podido registrar al alumno</h1>"
+                    + "<img src='elemenServlet/gatoTiste.gif'><br><br>" 
+                    +"<p>Puede que el alumno ya exista, para ello la boleta debe ser diferente a las ya registradas.</p>"
+                    + "<p>Por favor, verifícalo: </p>"
+                    +"<a href='ConsultarAlumnos'>Consultar Alumnos</a><br>"
+                    + "<a href=index.html>Regresar a Modificar Datos</a><br><br></div>");
+                System.out.println(e.getMessage());
+                System.out.println(e.getStackTrace());
+            }
+            
+            out.println("</body>");
+            out.println("</html>");
+        }
     }
 
     /**
@@ -123,14 +143,11 @@ public class EliminarAlumno extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-    
-    //destructor
+    //Destructor
     public void destroy(){
         try{
-            //destruir la conexión con la BD
             con.close();
         }catch(Exception e){
-            //si no deja destruir la conexión, para obligarlo
             super.destroy();
         }
     }

@@ -1,11 +1,5 @@
-
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -15,37 +9,30 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author ximem
  */
-public class EliminarAlumno extends HttpServlet {
+import java.sql.*;
+import javax.servlet.ServletConfig;
 
+public class ConsultarAlumnos extends HttpServlet {
+    
     private Connection con;
     private Statement set;
     private ResultSet rs;
     
+    //Constructor de la clase 
     public void init(ServletConfig cfg) throws ServletException{
-        //aqui se define cómo se conecta a la BD
-        
-        //tipo de conector jdbc(tipo de conector, este es lenguaje Java):manejador de BD:Puerto//IP/nombre BD
         String URL="jdbc:mysql://localhost/alumnos";
-        //Puede generarse un error si "no es soportable", el error puede ser por la url, 
-        //por lo que se le puede quitar el puerto, porque el manejador trae por defecto el puerto
        
         String userName="root";
         String password="n0m3l0";
         
         try{
-            //excepción para cuando se intenta concectar a la BD
-            
-            //Se especifica el driver "puerto.manejadorBD.tipoControlador.Driver"
             Class.forName("com.mysql.jdbc.Driver");
-            //se establece la conexión
             con=DriverManager.getConnection(URL,userName,password);
-            //se crea la sentencia
             set=con.createStatement();
             System.out.println("Se conectó a la BD");
             
         }catch(Exception e){
-            //cuando no se conecta a la BD
-            System.out.println("No se conectó con la BD :(");
+            System.out.println("No se conectó con la BD");
             System.out.println(e.getMessage());
             System.out.println(e.getStackTrace());
             
@@ -75,25 +62,58 @@ public class EliminarAlumno extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Eliminar un Alumno</title>");            
+            out.println("<title>Lista de Alumnos</title>");
+            out.println("<style>"
+                    +"body{"
+                    + "background-color:#8D8DAA;\n" +
+                      "text-align: center;}"
+                    + "table{"
+                    + "border-style: solid;\n" +
+                      "border-color: white;\n" +
+                      "border-radius: 5px;"
+                    + "}"
+                    + "</style>");            
             out.println("</head>");
             out.println("<body>");
-            
+            out.println("<h1>Tabla de la Lista de Alumnos</h1>"+
+                    "<table border=1 align='center'>"+
+                    "<tr>"+
+                        "<th>Boleta</th>"
+                        +"<th>Nombre del Alumno</th>"
+                        +"<th>Teléfono</th>"
+                    +"</tr>");
             try{
-                //eliminar un alumno por su n° de boleta
-                int bol=Integer.parseInt(request.getParameter("eliminarBoleta"));
-                String q="delete from alumnobatiz where boleta="+bol;
+                int boleta;
+                String nombre, apellidoP, apellidoM,tel;
+                String q="select * from alumnobatiz";
+                set=con.createStatement();
+                rs=set.executeQuery(q);
                 
-                set.executeUpdate(q);
-                out.println("<h1>Alumno eliminado</h1>");
+                while(rs.next()){
+                    boleta=rs.getInt("boleta");
+                    nombre=rs.getString("nombre");
+                    apellidoP=rs.getString("appat");
+                    apellidoM=rs.getString("apmat");
+                    tel=rs.getString("telefono");
+                    //hacer la tabla
+                    out.print("<tr>"+
+                            "<td>"+boleta+"</td>"
+                            +"<td>"+nombre+" "+apellidoP+" "+" "+apellidoM+"</td>"
+                            +"<td>"+tel+"</td>"
+                            + "</tr>");
+                }
+                
+                rs.close();
+                set.close();
             }catch(Exception e){
-                System.out.println("No se pudo eliminar el registro");
+                System.out.println("Error al conectar a la tabla");
                 System.out.println(e.getMessage());
                 System.out.println(e.getStackTrace());
-                
-                out.println("<h1>No se pudo eliminar el Alumno</h1>");
             }
-            out.println("<a href='ConsultarAlumnos'>Consultar Alumnos</a>");
+            out.print("</table>");
+            out.print("<br><br>");
+            out.print("<a href=index.html>Regresar a Modificar Datos</a><br><br>");
+            out.print("<a href=ingresarAlumno.html>Regresar a Ingresar Alumno</a><br><br>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -110,28 +130,24 @@ public class EliminarAlumno extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
+    /*Returns a short description of the servlet.
+     @return a String containing servlet description */
     @Override
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
 
     
-    //destructor
+    //Destructor
     public void destroy(){
         try{
-            //destruir la conexión con la BD
             con.close();
         }catch(Exception e){
-            //si no deja destruir la conexión, para obligarlo
             super.destroy();
         }
     }
+    
 }

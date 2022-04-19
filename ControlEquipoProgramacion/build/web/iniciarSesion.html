@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="elementos/style.css">
+    <script src="elementos/validacion.js"></script>
+</head>
+<body>
+    <div name="encabezado" id="encabezado">
+        <div id="bienvenida"><i>
+                <h1>Bienvenido</h1>
+            </i></div>
+        <div id="paginas"><h5>Iniciar Sesión</h5></div>
+    </div>
+    <nav>
+        <div id="ipn">
+            <img src="elementos/logoIPN.png" width="240" height="320">
+        </div>
+        <div id="form">
+            <p></p>
+            <br>
+            <br>
+            <br>
+            <form name="formularioInicio" method="post" action="controlInicioSesion.jsp">
+                <label>Introduce tu boleta: </label>
+                <input type="number" min="0" name="boletaInicio" id="boletaInicio">
+                <br><br>
+                <label>Introduce tu semestre: </label>
+                <select name="semestre" id="semestre">
+                    <option disabled>3</option>
+                    <option>4</option>
+                    <option disabled>5</option>
+                    <option>6</option>
+                </select>
+                <br><br>
+                <label>Introduce tu contraseña: </label>
+                <input type="password" name="contraseñaInicio" id="contraseñaInicio">
+                <br><p id="error"></p>
+                <br><br>
+                <button type="submit" class="subirDatos" id="subirDatos" 
+                onclick="return validarInicio(this)">Iniciar Sesión</button>
+            </form>
+        </div>
+    </nav>
+</body>
+</html>
